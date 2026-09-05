@@ -4,1041 +4,241 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIMAX - Soluciones Integrales Industriales, O&G, Construcción y Automotriz</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
-        :root {
-            --primary-blue: #00A3E0;
-            --navy-blue: #0B1B3D;
-            --dark-navy: #060E20;
-            --hilti-red: #D32F2F;
-            --sika-yellow: #FFB400;
-            --text-light: #F4F6F9;
-            --text-dark: #1A1A1A;
-            --text-gray: #A0AEC0;
-            --card-bg: rgba(15, 28, 58, 0.75);
-            --card-border: rgba(0, 163, 224, 0.2);
-            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--dark-navy);
-            color: var(--text-light);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        /* --- Header & Navigation --- */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(6, 14, 32, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--card-border);
-            padding: 12px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition);
-        }
-
-        .brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-        }
-
-        .brand-logo img {
-            height: 48px;
-            object-fit: contain;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
-        }
-
-        .logo-divider {
-            width: 1px;
-            height: 30px;
-            background: rgba(255,255,255,0.2);
-        }
-
-        .logo-text-dimax {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: #FFFFFF;
-            letter-spacing: 2px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .logo-text-dimax span {
-            color: var(--primary-blue);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-blue);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-blue);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* --- Buttons --- */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 28px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: var(--transition);
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: #FFF;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-whatsapp:hover {
-            background: #1EBE5D;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-blue), #0077B6);
-            color: #FFF;
-            box-shadow: 0 4px 15px rgba(0, 163, 224, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 163, 224, 0.5);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: #FFF;
-            border: 2px solid var(--primary-blue);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary-blue);
-            color: #FFF;
-            transform: translateY(-3px);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            padding: 160px 5% 100px 5%;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(6, 14, 32, 0.94) 0%, rgba(11, 27, 61, 0.85) 100%),
-                        url('Diapositiva52.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(0, 163, 224, 0.15);
-            border: 1px solid var(--primary-blue);
-            padding: 6px 16px;
-            border-radius: 30px;
-            color: var(--primary-blue);
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .hero-title {
-            font-size: 3.2rem;
-            line-height: 1.15;
-            margin-bottom: 25px;
-            color: #FFF;
-        }
-
-        .hero-title span {
-            color: var(--primary-blue);
-            background: linear-gradient(45deg, #00A3E0, #64DFDF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-desc {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            margin-bottom: 35px;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .hero-logo-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        .hero-logo-card img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        /* --- Stats Bar --- */
-        .stats-bar {
-            background: var(--navy-blue);
-            border-top: 1px solid var(--card-border);
-            border-bottom: 1px solid var(--card-border);
-            padding: 40px 5%;
-        }
-
-        .stats-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 2.8rem;
-            color: var(--primary-blue);
-            margin-bottom: 5px;
-        }
-
-        .stat-item p {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        /* --- Sections General --- */
-        section {
-            padding: 100px 5%;
-            position: relative;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 60px auto;
-        }
-
-        .section-tag {
-            color: var(--primary-blue);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .section-title {
-            font-size: 2.4rem;
-            color: #FFF;
-            margin-bottom: 15px;
-        }
-
-        .section-subtitle {
-            color: var(--text-gray);
-            font-size: 1rem;
-        }
-
-        /* --- Infographic Visual Containers --- */
-        .infographic-wrapper {
-            background: rgba(11, 27, 61, 0.6);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            transition: var(--transition);
-        }
-
-        .infographic-wrapper:hover {
-            border-color: var(--primary-blue);
-            transform: translateY(-5px);
-        }
-
-        .infographic-wrapper img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            display: block;
-        }
-
-        .infographic-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        /* --- Nosotros Section --- */
-        .about-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .about-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #FFF;
-        }
-
-        .about-content p {
-            color: var(--text-gray);
-            margin-bottom: 20px;
-        }
-
-        .about-features {
-            list-style: none;
-            margin-top: 25px;
-        }
-
-        .about-features li {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 15px;
-            color: var(--text-light);
-        }
-
-        .about-features li i {
-            color: var(--primary-blue);
-            font-size: 1.2rem;
-            margin-top: 3px;
-        }
-
-        /* --- Marcas Section --- */
-        .marcas-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .marca-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 35px;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .marca-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary-blue);
-            box-shadow: 0 12px 30px rgba(0, 163, 224, 0.15);
-        }
-
-        .marca-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .marca-title {
-            font-size: 2rem;
-            color: #FFF;
-        }
-
-        .marca-badge {
-            background: rgba(255,255,255,0.05);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            color: var(--primary-blue);
-            font-weight: 600;
-        }
-
-        .marca-desc {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        /* --- Catalog Detail Section --- */
-        .catalog-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 60px;
-        }
-
-        .category-block {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 40px;
-        }
-
-        .category-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 15px;
-        }
-
-        .category-header i {
-            font-size: 2rem;
-            color: var(--primary-blue);
-        }
-
-        .category-header h3 {
-            font-size: 1.6rem;
-            color: #FFF;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .product-card {
-            background: rgba(6, 14, 32, 0.6);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 8px;
-            padding: 20px;
-            transition: var(--transition);
-        }
-
-        .product-card:hover {
-            border-color: var(--primary-blue);
-            transform: translateY(-3px);
-        }
-
-        .product-card h4 {
-            color: #FFF;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-
-        .product-card p {
-            color: var(--text-gray);
-            font-size: 0.85rem;
-            margin-bottom: 12px;
-        }
-
-        .product-spec {
-            font-size: 0.75rem;
-            color: var(--primary-blue);
-            background: rgba(0, 163, 224, 0.1);
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block;
-            margin-bottom: 5px;
-        }
-
-        /* --- Advisor Card --- */
-        .advisor-section {
-            background: linear-gradient(180deg, var(--dark-navy) 0%, #030712 100%);
-        }
-
-        .advisor-card {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            border: 1px solid var(--primary-blue);
-            border-radius: 20px;
-            padding: 50px;
-            box-shadow: 0 20px 50px rgba(0, 163, 224, 0.15);
-            text-align: center;
-        }
-
-        .advisor-profile {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .advisor-avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-blue), #004466);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: #FFF;
-            border: 3px solid #FFF;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        }
-
-        .advisor-info {
-            text-align: left;
-        }
-
-        .advisor-info h3 {
-            font-size: 1.8rem;
-            color: #FFF;
-        }
-
-        .advisor-info p {
-            color: var(--primary-blue);
-            font-weight: 600;
-        }
-
-        .advisor-info span {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-            display: block;
-        }
-
-        .contact-cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background: #02050B;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding: 40px 5%;
-            text-align: center;
-            color: var(--text-gray);
-            font-size: 0.85rem;
-        }
-
-        footer p {
-            margin-bottom: 8px;
-        }
-
-        /* --- Responsive Design --- */
-        @media (max-width: 992px) {
-            .hero-container, .about-grid, .infographic-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-title { font-size: 2.5rem; }
-            .advisor-profile { flex-direction: column; text-align: center; }
-            .advisor-info { text-align: center; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .contact-cta-buttons { flex-direction: column; }
-            .btn { width: 100%; }
-        }
+        /* Tus estilos CSS aquí */
     </style>
 </head>
 <body>
-
-    <!-- Header / Nav -->
     <header>
-        <a href="#inicio" class="brand-logo">
-            <img src="dimax.png" alt="DIMAX Grupo Markina-Xemein">
-            <div class="logo-divider"></div>
-            <div class="logo-text-dimax">DI<span>MAX</span></div>
-        </a>
-        <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#ecosistema">Sector O&G</a></li>
-            <li><a href="#marcas">Marcas</a></li>
-            <li><a href="#soluciones">Soluciones</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-        <a href="https://wa.me/+584265831648?text=Hola,%20deseo%20solicitar%20una%20cotizaci%C3%B3n" target="_blank" class="btn btn-whatsapp">
-            <i class="fab fa-whatsapp"></i> Cotizar Ahora
-        </a>
+        <nav>
+            <div class="logo">DIMAX</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#ecosistema">Sector O&G</a></li>
+                <li><a href="#marcas">Marcas</a></li>
+                <li><a href="#soluciones">Soluciones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a href="https://wa.me/+584265831648?text=Hola,%20deseo%20solicitar%20una%20cotizaci%C3%B3n" class="btn-cotizar">Cotizar Ahora</a>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="hero-container">
-            <div>
-                <div class="hero-badge">
-                    <i class="fas fa-certificate"></i> Grupo Markina-Xemein (1990 - 2026)
+        <div class="container">
+            <p class="hero-subtitle">Grupo Markina-Xemein (1990 - 2026)</p>
+            <h1>35 Años de Excelencia e Ingeniería de Alto Desempeño</h1>
+            <p class="hero-description">Líderes integrales en la importación, distribución y asesoría técnica de soluciones avanzadas para el mantenimiento industrial, construcción pesada, petroquímica y el sector O&G.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/+584265831648?text=Hola,%20deseo%20solicitar%20asesor%C3%ADa%20t%C3%A9cnica" class="btn-primary">Solicitar Asesoría Directa</a>
+                <a href="#soluciones" class="btn-secondary">Explorar Catálogo</a>
+            </div>
+            <p class="hero-note">RESPALDO Y GARANTÍA INDUSTRIAL A NIVEL NACIONAL</p>
+        </div>
+    </section>
+
+    <section id="nosotros" class="stats">
+        <div class="container">
+            <div class="stat-item">
+                <span class="stat-number">35+</span>
+                <span class="stat-label">Años de Trayectoria</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">+7.000</span>
+                <span class="stat-label">Clientes Satisfechos</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Continuidad Operativa</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">Top 3</span>
+                <span class="stat-label">Distribuidores Sika / Hilti</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <h2>Trayectoria e Infraestructura</h2>
+            <h3>Potencia Operativa Garantizada en Proyectos de Gran Envergadura</h3>
+            <p>En DIMAX, como parte del Grupo Markina-Xemein, nos especializamos en la comercialización y soporte técnico de insumos críticos para la industria pesada y la construcción desde 1990.</p>
+            <p>Ofrecemos soluciones probadas e integradas en los complejos de refinación y extracción más críticos del planeta. Los mismos estándares técnicos que protegen a las refinerías líderes del mundo están disponibles hoy localmente en Barcelona, Estado Anzoátegui.</p>
+            <div class="features">
+                <div class="feature">
+                    <h4>Ingeniería de Campo Personalizada:</h4>
+                    <p>Evaluamos su infraestructura para especificar la mejor combinación de materiales y herramientas.</p>
                 </div>
-                <h1 class="hero-title">35 Años de Excelencia e <span>Ingeniería de Alto Desempeño</span></h1>
-                <p class="hero-desc">
-                    Líderes integrales en la importación, distribución y asesoría técnica de soluciones avanzadas para el mantenimiento industrial, construcción pesada, petroquímica y el sector O&G.
-                </p>
-                <div class="hero-actions">
-                    <a href="https://wa.me/+584265831648?text=Hola,%20deseo%20solicitar%20asesor%C3%ADa%20t%C3%A9cnica" target="_blank" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> Solicitar Asesoría Directa
-                    </a>
-                    <a href="#soluciones" class="btn btn-outline">Explorar Catálogo</a>
+                <div class="feature">
+                    <h4>Certificación de Calidad:</h4>
+                    <p>Productos bajo homologaciones internacionales (ISO, FM, ICC-ES, UL, ACI).</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="ecosistema" class="ecosystem">
+        <div class="container">
+            <h2>Especialización Petroquímica</h2>
+            <h3>Ecosistema de Soluciones para el Sector O&G</h3>
+            <p>Sistemas integrales diseñados para resistir vibraciones, corrosión marina, altas temperaturas y cargas estructurales críticas en refinerías.</p>
+            <h4>5 Pilares Críticos para Planta</h4>
+            <div class="pillars">
+                <div class="pillar">
+                    <span>1.</span>
+                    <h5>Soportes E&I y Bandejas Portacables:</h5>
+                    <p>Modulares, sin necesidad de soldadura en caliente.</p>
+                </div>
+                <div class="pillar">
+                    <span>2.</span>
+                    <h5>Soportes Modulares para Tuberías (Pipe) y HVAC:</h5>
+                    <p>Soluciones flexibles de alta capacidad de carga.</p>
+                </div>
+                <div class="pillar">
+                    <span>3.</span>
+                    <h5>Fijación de Rejillas Industriales (Grating):</h5>
+                    <p>Instalación rápida y puesta a tierra segura.</p>
+                </div>
+                <div class="pillar">
+                    <span>4.</span>
+                    <h5>Fijación Estructural:</h5>
+                    <p>Anclajes químicos epóxicos y mecánicos de cuña.</p>
+                </div>
+                <div class="pillar">
+                    <span>5.</span>
+                    <h5>Protección Pasiva Contra Fuego:</h5>
+                    <p>Sellados universales intumescentes y cortafuego.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="marcas" class="brands">
+        <div class="container">
+            <h2>Nuestras Alianzas Globales</h2>
+            <h3>Marcas de Clase Mundial</h3>
+            <p>Distribuimos productos líderes en el mercado mundial para asegurar el máximo desempeño de sus obras e instalaciones.</p>
             
-            <div class="hero-logo-card">
-                <img src="unnamed.png" alt="Grupo Markina-Xemein 35 Años">
-                <p style="margin-top: 15px; color: var(--text-gray); font-size: 0.85rem; font-weight: 600;">
-                    RESPALDO Y GARANTÍA INDUSTRIAL A NIVEL NACIONAL
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Metrics Bar -->
-    <div class="stats-bar">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3>35+</h3>
-                <p>Años de Trayectoria</p>
-            </div>
-            <div class="stat-item">
-                <h3>+7.000</h3>
-                <p>Clientes Satisfechos</p>
-            </div>
-            <div class="stat-item">
-                <h3>100%</h3>
-                <p>Continuidad Operativa</p>
-            </div>
-            <div class="stat-item">
-                <h3>Top 3</h3>
-                <p>Distribuidores Sika / Hilti</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Nosotros Section con Confianza Global -->
-    <section id="nosotros">
-        <div class="about-grid">
-            <div class="about-content">
-                <span class="section-tag">Trayectoria e Infraestructura</span>
-                <h3>Potencia Operativa Garantizada en Proyectos de Gran Envergadura</h3>
-                <p>
-                    En <strong>DIMAX</strong>, como parte del <strong>Grupo Markina-Xemein</strong>, nos especializamos en la comercialización y soporte técnico de insumos críticos para la industria pesada y la construcción desde 1990.
-                </p>
-                <p>
-                    Ofrecemos soluciones probadas e integradas en los complejos de refinación y extracción más críticos del planeta. Los mismos estándares técnicos que protegen a las refinerías líderes del mundo están disponibles hoy localmente en Barcelona, Estado Anzoátegui.
-                </p>
-                <ul class="about-features">
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <strong>Ingeniería de Campo Personalizada:</strong> Evaluamos su infraestructura para especificar la mejor combinación de materiales y herramientas.
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <div>
-                            <strong>Certificación de Calidad:</strong> Productos bajo homologaciones internacionales (ISO, FM, ICC-ES, UL, ACI).
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="infographic-wrapper">
-                <img src="Diapositiva53.jpg" alt="Confianza Global en Entornos Exigentes - Saudi Aramco, Repsol, ExxonMobil, Shell, Petrobras">
-            </div>
-        </div>
-    </section>
-
-    <!-- Ecosistema O&G Infographic Section -->
-    <section id="ecosistema" style="background-color: var(--navy-blue);">
-        <div class="section-header">
-            <span class="section-tag">Especialización Petroquímica</span>
-            <h2 class="section-title">Ecosistema de Soluciones para el Sector O&G</h2>
-            <p class="section-subtitle">Sistemas integrales diseñados para resistir vibraciones, corrosión marina, altas temperaturas y cargas estructurales críticas en refinerías.</p>
-        </div>
-
-        <div class="infographic-grid">
-            <div class="infographic-wrapper">
-                <img src="Diapositiva52.jpg" alt="Ecosistema de Soluciones O&G">
-            </div>
-            <div>
-                <h3 style="font-size: 1.8rem; color: #FFF; margin-bottom: 20px;">5 Pilares Críticos para Planta</h3>
-                <ul class="about-features">
-                    <li>
-                        <i class="fas fa-shield-alt"></i>
-                        <div>
-                            <strong>1. Soportes E&I y Bandejas Portacables:</strong> Modulares, sin necesidad de soldadura en caliente.
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fas fa-cogs"></i>
-                        <div>
-                            <strong>2. Soportes Modulares para Tuberías (Pipe) y HVAC:</strong> Soluciones flexibles de alta capacidad de carga.
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fas fa-th"></i>
-                        <div>
-                            <strong>3. Fijación de Rejillas Industriales (Grating):</strong> Instalación rápida y puesta a tierra segura.
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fas fa-anchor"></i>
-                        <div>
-                            <strong>4. Fijación Estructural:</strong> Anclajes químicos epóxicos y mecánicos de cuña.
-                        </div>
-                    </li>
-                    <li>
-                        <i class="fas fa-fire-extinguisher"></i>
-                        <div>
-                            <strong>5. Protección Pasiva Contra Fuego:</strong> Sellados universales intumescentes y cortafuego.
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Marcas Destacadas -->
-    <section id="marcas">
-        <div class="section-header">
-            <span class="section-tag">Nuestras Alianzas Globales</span>
-            <h2 class="section-title">Marcas de Clase Mundial</h2>
-            <p class="section-subtitle">Distribuimos productos líderes en el mercado mundial para asegurar el máximo desempeño de sus obras e instalaciones.</p>
-        </div>
-
-        <div class="marcas-grid">
-            <!-- SIKA -->
-            <div class="marca-card">
-                <div>
-                    <div class="marca-header">
-                        <h3 class="marca-title" style="color: var(--sika-yellow);">SIKA</h3>
-                        <span class="marca-badge">Suiza / Global</span>
+            <div class="brands-grid">
+                <!-- SIKA -->
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <h3>SIKA</h3>
+                        <span class="brand-origin">Suiza / Global</span>
                     </div>
-                    <p class="marca-desc">
-                        Líder en químicos para la construcción. Recubrimientos novolac epoxifenólicos, aditivos impermeabilizantes, morteros de reparación y poliuretanos de alto rendimiento.
-                    </p>
+                    <p>Líder en químicos para la construcción. Recubrimientos novolac epoxifenólicos, aditivos impermeabilizantes, morteros de reparación y poliuretanos de alto rendimiento.</p>
+                    <a href="https://dimax-gmx.github.io/sikarecinfo/" class="btn-primary">Recubrimientos Metal</a>
                 </div>
-                <a href="#soluciones" class="btn btn-outline" style="padding: 10px 18px; font-size: 0.8rem;">Ver Productos Sika</a>
-            </div>
 
-            <!-- HILTI -->
-            <div class="marca-card">
-                <div>
-                    <div class="marca-header">
-                        <h3 class="marca-title" style="color: var(--hilti-red);">HILTI</h3>
-                        <span class="marca-badge">Liechtenstein</span>
+                <!-- HILTI -->
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <h3>HILTI</h3>
+                        <span class="brand-origin">Liechtenstein</span>
                     </div>
-                    <p class="marca-desc">
-                        Sistemas de fijación para cargas extremas, anclajes epóxicos HIT-RE 500 V3, herramientas electromecánicas pesadas y protección pasiva cortafuego.
-                    </p>
+                    <p>Sistemas de fijación para cargas extremas, anclajes epóxicos HIT-RE 500 V3, herramientas electromecánicas pesadas y protección pasiva cortafuego.</p>
+                    <a href="https://dimax-gmx.github.io/hilticalc1/" class="btn-primary">Anclajes y Pernos</a>
                 </div>
-                <a href="#soluciones" class="btn btn-outline" style="padding: 10px 18px; font-size: 0.8rem;">Ver Productos Hilti</a>
-            </div>
 
-            <!-- CASTROL -->
-            <div class="marca-card">
-                <div>
-                    <div class="marca-header">
-                        <h3 class="marca-title" style="color: #00A859;">CASTROL</h3>
-                        <span class="marca-badge">Reino Unido</span>
+                <!-- CASTROL -->
+                <div class="brand-card">
+                    <div class="brand-header">
+                        <h3>CASTROL</h3>
+                        <span class="brand-origin">Reino Unido</span>
                     </div>
-                    <p class="marca-desc">
-                        Tecnología avanzada en lubricación, aceites sintéticos y fluidos de transmisión para flotas comerciales, maquinaria pesada y parque automotriz.
-                    </p>
+                    <p>Tecnología avanzada en lubricación, aceites sintéticos y fluidos de transmisión para flotas comerciales, maquinaria pesada y parque automotriz.</p>
+                    <a href="#soluciones" class="btn-primary">Ver Fluidos Castrol</a>
                 </div>
-                <a href="#soluciones" class="btn btn-outline" style="padding: 10px 18px; font-size: 0.8rem;">Ver Fluidos Castrol</a>
             </div>
         </div>
     </section>
 
-    <!-- Soluciones Técnicas e Infografías Detalladas -->
-    <section id="soluciones" style="background-color: var(--navy-blue);">
-        <div class="section-header">
-            <span class="section-tag">Sistemas e Ingeniería de Campo</span>
-            <h2 class="section-title">Portafolio Técnico y Casos de Aplicación</h2>
-            <p class="section-subtitle">Recubrimientos especializados, aislamiento térmico, anclajes bajo agua y maquinaria para intervenciones de alta exigencia.</p>
-        </div>
-
-        <div class="catalog-container">
+    <section id="soluciones" class="solutions">
+        <div class="container">
+            <h2>Sistemas e Ingeniería de Campo</h2>
+            <h3>Portafolio Técnico y Casos de Aplicación</h3>
+            <p>Recubrimientos especializados, aislamiento térmico, anclajes bajo agua y maquinaria para intervenciones de alta exigencia.</p>
             
-            <!-- 0. Soluciones Industriales SIKA -->
-            <div class="category-block" style="border-left: 4px solid var(--sika-yellow);">
-                <div class="category-header">
-                    <i class="fas fa-flask" style="color: var(--sika-yellow);"></i>
-                    <div>
-                        <h3 style="color: #FFF;">Sistemas SIKA: Recubrimientos Epoxifenólicos e Impermeabilización</h3>
-                        <p style="color: var(--text-gray); font-size: 0.85rem;">114 años de ingeniería suiza para entornos de alta agresividad química y térmica.</p>
-                    </div>
-                </div>
-
-                <!-- Banner Respaldo SIKA -->
-                <div class="infographic-wrapper" style="margin-bottom: 30px;">
-                    <img src="Diapositiva6.jpg" alt="114 Años de Ingeniería Suiza - SIKA Latam">
-                </div>
-
-                <!-- Recubrimientos Térmicos y Crudos -->
-                <div class="infographic-grid" style="margin-bottom: 30px;">
-                    <div class="infographic-wrapper">
-                        <img src="Diapositiva18.jpg" alt="Ambientes Críticos: Fluidos y Crudos Pesados hasta 210°C">
-                    </div>
-                    <div>
-                        <h4 style="color: var(--sika-yellow); font-size: 1.3rem; margin-bottom: 15px;">Recubrimientos Serie 400 Novolac</h4>
-                        <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 15px;">
-                            <strong>Aislamiento y Resistencia Crítica:</strong> Formulación 100% sólidos diseñada para soportar hasta 210°C en temperatura seca y 120°C en inmersión directa en crudo.
-                        </p>
-                        <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 15px;">
-                            <strong>Serie 45:</strong> Aplicación de 5-6 mils por capa para protección continua contra choque térmico en tanques y tuberías de proceso.
-                        </p>
-                        <span class="product-spec">Libre de VOC</span>
-                        <span class="product-spec">Aplicable en caliente</span>
-                        <span class="product-spec">Aprobado para agua potable</span>
-                    </div>
-                </div>
-
-                <!-- Aplicaciones Prácticas SIKA -->
-                <div class="infographic-grid" style="margin-bottom: 30px;">
-                    <div class="infographic-wrapper">
-                        <img src="Diapositiva13.jpg" alt="Aplicación Epoxifenólico Novolac Serie 400 NF en Tuberías">
-                    </div>
-                    <div class="infographic-wrapper">
-                        <img src="Diapositiva14.jpg" alt="Sistema Epoxifenólico para Recubrimiento Interior y Exterior de Tanques Metálicos">
-                    </div>
-                </div>
-
-                <!-- Impermeabilización y Concreto -->
-                <div class="infographic-wrapper">
-                    <img src="Diapositiva7.jpg" alt="Soluciones SIKA para Impermeabilización y Concreto">
+            <div class="solution-category">
+                <h4>Sistemas SIKA: Recubrimientos Epoxifenólicos e Impermeabilización</h4>
+                <p>114 años de ingeniería suiza para entornos de alta agresividad química y térmica.</p>
+                <h5>Recubrimientos Serie 400 Novolac</h5>
+                <p><strong>Aislamiento y Resistencia Crítica:</strong> Formulación 100% sólidos diseñada para soportar hasta 210°C en temperatura seca y 120°C en inmersión directa en crudo.</p>
+                <ul>
+                    <li>Serie 45: Aplicación de 5-6 mils por capa para protección continua contra choque térmico en tanques y tuberías de proceso.</li>
+                </ul>
+                <div class="badges">
+                    <span>Libre de VOC</span>
+                    <span>Aplicable en caliente</span>
+                    <span>Aprobado para agua potable</span>
                 </div>
             </div>
 
-            <!-- 1. Sistemas HILTI: Anclajes y Fijaciones Especializadas -->
-            <div class="category-block" style="border-left: 4px solid var(--hilti-red);">
-                <div class="category-header">
-                    <i class="fas fa-anchor" style="color: var(--hilti-red);"></i>
-                    <div>
-                        <h3 style="color: #FFF;">Sistemas HILTI: Fijación Estructural y Anclajes Químicos</h3>
-                        <p style="color: var(--text-gray); font-size: 0.85rem;">Tecnología de punta para fijaciones de alto desempeño, trabajo pesado y condiciones submarinas.</p>
-                    </div>
+            <div class="solution-category">
+                <h4>Sistemas HILTI: Fijación Estructural y Anclajes Químicos</h4>
+                <p>Tecnología de punta para fijaciones de alto desempeño, trabajo pesado y condiciones submarinas.</p>
+                <h5>Soluciones de Fijación Quimica Hilti</h5>
+                <p>Sistemas de resina epóxica e híbrida homologados para altas exigencias estructurales, conexiones de rebar posterior y zonas de sísmica C1/C2.</p>
+                <div class="badges">
+                    <span>Inyección Directa</span>
+                    <span>Certificación ICC-ES / ETA</span>
+                    <span>Alta Capacidad de Carga</span>
                 </div>
-
-                <!-- Diapositiva 24: Resumen Anclajes Químicos -->
-                <div class="infographic-grid" style="margin-bottom: 30px;">
-                    <div class="infographic-wrapper">
-                        <img src="Diapositiva24.jpg" alt="Portafolio de Anclajes Químicos Hilti - HIT-RE 500 V3, HIT-HY 200-R, HIT-ICE">
-                    </div>
-                    <div>
-                        <h4 style="color: var(--hilti-red); font-size: 1.3rem; margin-bottom: 15px;">Soluciones de Fijación Quimica Hilti</h4>
-                        <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 15px;">
-                            Sistemas de resina epóxica e híbrida homologados para altas exigencias estructurales, conexiones de rebar posterior y zonas de sísmica C1/C2.
-                        </p>
-                        <span class="product-spec">Inyección Directa</span>
-                        <span class="product-spec">Certificación ICC-ES / ETA</span>
-                        <span class="product-spec">Alta Capacidad de Carga</span>
-                    </div>
-                </div>
-
-                <!-- Diapositivas 27 y 28: HIT-RE 500 V3 bajo agua y temperaturas congelantes -->
-                <div class="infographic-grid" style="margin-bottom: 30px;">
-                    <div class="infographic-wrapper">
-                        <img src="Diapositiva27.jpg" alt="Anclaje Bajo Agua Hilti HIT-RE 500 V3">
-                    </div>
-                    <div class="infographic-wrapper">
-                        <img src="Diapositiva28.jpg" alt="Hilti HIT-ICE para Bajas Temperaturas">
-                    </div>
-                </div>
-
-                <!-- Diapositivas 33 y 34: Herramientas y Coring Submarino -->
-                <div class="infographic-grid" style="margin-bottom: 30px;">
-                    <div class="infographic-wrapper">
-                        <img src="Diapositiva33.jpg" alt="Sistemas de Perforación y Herramientas Hilti bajo Agua">
-                    </div>
-                    <div class="infographic-wrapper">
-                        <img src="Diapositiva34.jpg" alt="Perforación Diamante Hilti DD 350-CA y DD 500">
-                    </div>
-                </div>
-
-                <div class="products-grid">
-                    <div class="product-card">
-                        <h4 style="color: var(--hilti-red);">HIT-RE 500 V3</h4>
+                
+                <div class="products">
+                    <div class="product">
+                        <h6>HIT-RE 500 V3</h6>
                         <p>Anclaje químico epóxico de máxima adherencia. Aprobado para concreto fisurado, perforaciones con diamante y bajo agua.</p>
-                        <span class="product-spec">Epoxy de Altas Prestaciones</span>
+                        <span class="tag">Epoxy de Altas Prestaciones</span>
                     </div>
-                    <div class="product-card">
-                        <h4 style="color: var(--hilti-red);">HIT-HY 200-R V3</h4>
+                    <div class="product">
+                        <h6>HIT-HY 200-R V3</h6>
                         <p>Mortero híbrido de curado ultra rápido para fijaciones estructurales de acero y rebar en concreto.</p>
-                        <span class="product-spec">Curado Rápido</span>
+                        <span class="tag">Curado Rápido</span>
                     </div>
-                    <div class="product-card">
-                        <h4 style="color: var(--hilti-red);">DD 350-CA / DD 500</h4>
+                    <div class="product">
+                        <h6>DD 350-CA / DD 500</h6>
                         <p>Sistemas de perforación con diamante para trabajo industrial pesado y corte en condiciones extremas.</p>
-                        <span class="product-spec">Corte con Diamante</span>
+                        <span class="tag">Corte con Diamante</span>
                     </div>
                 </div>
             </div>
 
-            <!-- 2. Integración Crítica E&I + Cortafuego HILTI -->
-            <div class="category-block">
-                <div class="category-header">
-                    <i class="fas fa-fire-burner"></i>
-                    <div>
-                        <h3>Integración Crítica: Soportes E&I y Protección Cortafuego</h3>
-                        <p style="color: var(--text-gray); font-size: 0.85rem;">Evolución de los sistemas vulnerables a soluciones certificadas y seguras.</p>
-                    </div>
+            <div class="solution-category">
+                <h4>Integración Crítica: Soportes E&I y Protección Cortafuego</h4>
+                <p>Evolución de los sistemas vulnerables a soluciones certificadas y seguras.</p>
+                <h5>Ventajas Tecnológicas del Sistema Hilti</h5>
+                <ul>
+                    <li><strong>Instalación sin Soldadura:</strong> Soportes modulares e instalación sin trabajos en caliente, reduciendo riesgos de ignición en áreas clasificadas.</li>
+                    <li><strong>Sellado Intumescente:</strong> Sistemas cortafuego universales certificados UL/FM para paso de cables e instrumentación en penetraciones de pared y losa.</li>
+                </ul>
+                <div class="badges">
+                    <span>Sin Permisos de Fuego</span>
+                    <span>Homologado UL / FM</span>
+                    <span>Modular y Reutilizable</span>
                 </div>
-
-                <!-- Diapositiva 51: Integración E&I -->
-                <div class="infographic-grid" style="margin-bottom: 30px;">
-                    <div class="infographic-wrapper">
-                        <img src="Diapositiva51.jpg" alt="Integración Crítica: Soportes E&I y Protección Cortafuego">
-                    </div>
-                    <div>
-                        <h4 style="color: #FFF; font-size: 1.3rem; margin-bottom: 15px;">Ventajas Tecnológicas del Sistema Hilti</h4>
-                        <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 15px;">
-                            <strong>Instalación sin Soldadura:</strong> Soportes modulares e instalación sin trabajos en caliente, reduciendo riesgos de ignición en áreas clasificadas.
-                        </p>
-                        <p style="color: var(--text-gray); font-size: 0.95rem; margin-bottom: 15px;">
-                            <strong>Sellado Intumescente:</strong> Sistemas cortafuego universales certificados UL/FM para paso de cables e instrumentación en penetraciones de pared y losa.
-                        </p>
-                        <span class="product-spec">Sin Permisos de Fuego</span>
-                        <span class="product-spec">Homologado UL / FM</span>
-                        <span class="product-spec">Modular y Reutilizable</span>
-                    </div>
-                </div>
-
-                <!-- Diapositiva 44 y 45: Cortafuego e Infraestructura -->
-                <div class="infographic-grid">
-                    <div class="infographic-wrapper">
-                        <img src="Diapositiva44.jpg" alt="Sistemas Cortafuego Hilti Firestop">
-                    </div>
-                    <div class="infographic-wrapper">
-                        <img src="Diapositiva45.jpg" alt="Soportes Modulares Hilti MT System para Tuberías e Instalaciones">
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Advisor Section / Contacto -->
-    <section id="contacto" class="advisor-section">
-        <div class="advisor-card">
-            <div class="advisor-profile">
-                <div class="advisor-avatar">
-                    <i class="fas fa-user-tie"></i>
-                </div>
-                <div class="advisor-info">
-                    <h3>Atención Técnica Directa</h3>
-                    <p>Ingeniería de Campo & Cotizaciones Directas</p>
-                    <span>Barcelona, Estado Anzoátegui | Cobertura Nacional</span>
-                </div>
-            </div>
-            <p style="color: var(--text-gray); max-width: 600px; margin: 0 auto;">
-                Póngase en contacto directo con nuestros especialistas para recibir asesoría sobre productos Sika y Hilti, hojas técnicas, certificaciones o solicitudes de compra.
-            </p>
-            <div class="contact-cta-buttons">
-                <a href="https://wa.me/+584265831648?text=Hola,%20deseo%20solicitar%20asesor%C3%ADa%20técnica%20sobre%20los%20sistemas%20Hilti%20y%20Sika" target="_blank" class="btn btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
-                </a>
-                <a href="mailto:ventas@dimax.com.ve" class="btn btn-primary">
-                    <i class="fas fa-envelope"></i> Enviar Correo Electrónico
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2>Atención Técnica Directa</h2>
+            <h3>Ingeniería de Campo & Cotizaciones Directas</h3>
+            <p class="location">Barcelona, Estado Anzoátegui | Cobertura Nacional</p>
+            <p>Póngase en contacto directo con nuestros especialistas para recibir asesoría sobre productos Sika y Hilti, hojas técnicas, certificaciones o solicitudes de compra.</p>
+            <div class="contact-buttons">
+                <a href="https://wa.me/+584265831648?text=Hola,%20deseo%20solicitar%20asesor%C3%ADa%20t%C3%A9cnica%20sobre%20los%20sistemas%20Hilti%20y%20Sika" class="btn-primary">Contactar por WhatsApp</a>
+                <a href="mailto:ventas@dimax.com.ve" class="btn-secondary">Enviar Correo Electrónico</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p><strong>DIMAX - Grupo Markina-Xemein</strong> &copy; 1990 - 2026. Todos los derechos reservados.</p>
-        <p>Especialistas en Soluciones Industriales, O&G, Construcción Pesada y Automotriz.</p>
+        <div class="container">
+            <p>DIMAX - Grupo Markina-Xemein© 1990 - 2026. Todos los derechos reservados.</p>
+            <p>Especialistas en Soluciones Industriales, O&G, Construcción Pesada y Automotriz.</p>
+        </div>
     </footer>
-
 </body>
 </html>
