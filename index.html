@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo Markina-Xemein | Soluciones Industriales</title>
+    <title>Grupo Markina-Xemein | 35 Años de Excelencia</title>
     <style>
         :root {
+            --dark-blue: #1e3a5f;
+            --medium-blue: #2e8bc9;
+            --light-blue: #4db8ff;
+            --gold: #d4a843;
+            --gold-light: #f4c430;
             --dark-bg: #1a1a1a;
             --card-bg: #2d2d2d;
             --text-light: #ffffff;
@@ -14,7 +19,6 @@
             --hilti-red: #dd0000;
             --castrol-green: #008040;
             --whatsapp-green: #25d366;
-            --link-blue: #4a9eff;
         }
 
         body {
@@ -26,142 +30,230 @@
             line-height: 1.6;
         }
 
+        /* Header con Logo */
         header {
-            background-color: #111;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
             padding: 30px 20px;
             text-align: center;
-            border-bottom: 3px solid var(--sika-yellow);
+            border-bottom: 4px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 100px 100px;
+            opacity: 0.3;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-35years {
+            max-width: 200px;
+            height: auto;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-35years:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-blue-version {
+            max-width: 250px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         header h1 {
-            margin: 0;
-            font-size: 2.2rem;
+            margin: 20px 0 10px;
+            font-size: 2.5rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            color: var(--gold-light);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 1;
         }
 
         header p {
-            margin: 10px 0 0;
-            color: var(--text-gray);
-            font-size: 1.1rem;
+            margin: 0;
+            color: var(--text-light);
+            font-size: 1.2rem;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        .anniversary-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--dark-blue);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
         }
 
         .main-nav {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            background-color: #222;
+            background: linear-gradient(90deg, var(--dark-blue) 0%, #2a5a8a 100%);
             padding: 15px;
             gap: 15px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            border-bottom: 2px solid var(--gold);
         }
 
         .nav-btn {
             background-color: transparent;
             color: var(--text-light);
-            border: 2px solid transparent;
-            padding: 10px 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 12px 24px;
             font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 6px;
             transition: all 0.3s ease;
         }
 
         .nav-btn:hover {
-            background-color: #333;
+            background-color: rgba(255,255,255,0.1);
+            border-color: var(--gold);
+            transform: translateY(-2px);
         }
 
-        .nav-btn[data-target="inicio"].active { border-color: var(--text-light); background-color: #333; }
-        .nav-btn[data-target="sika"].active { border-color: var(--sika-yellow); color: var(--sika-yellow); background-color: rgba(255, 204, 0, 0.1); }
-        .nav-btn[data-target="hilti"].active { border-color: var(--hilti-red); color: var(--hilti-red); background-color: rgba(221, 0, 0, 0.1); }
-        .nav-btn[data-target="castrol"].active { border-color: var(--castrol-green); color: var(--castrol-green); background-color: rgba(0, 128, 64, 0.1); }
+        .nav-btn[data-target="inicio"].active { 
+            border-color: var(--gold); 
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--dark-blue);
+        }
+        .nav-btn[data-target="sika"].active { 
+            border-color: var(--sika-yellow); 
+            color: var(--sika-yellow); 
+            background-color: rgba(255, 204, 0, 0.15); 
+        }
+        .nav-btn[data-target="hilti"].active { 
+            border-color: var(--hilti-red); 
+            color: var(--hilti-red); 
+            background-color: rgba(221, 0, 0, 0.15); 
+        }
+        .nav-btn[data-target="castrol"].active { 
+            border-color: var(--castrol-green); 
+            color: var(--castrol-green); 
+            background-color: rgba(0, 128, 64, 0.15); 
+        }
 
         /* Botones de enlaces externos */
         .external-links {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            background-color: #1a1a1a;
-            padding: 15px;
-            gap: 12px;
-            border-bottom: 2px solid #333;
+            background: linear-gradient(90deg, var(--medium-blue) 0%, var(--light-blue) 100%);
+            padding: 18px;
+            gap: 15px;
+            border-bottom: 3px solid var(--gold);
         }
 
         .external-link-btn {
-            background-color: var(--link-blue);
-            color: white;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--dark-blue);
             border: none;
-            padding: 10px 18px;
-            font-size: 0.9rem;
+            padding: 12px 22px;
+            font-size: 0.95rem;
             font-weight: bold;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 6px;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
         }
 
         .external-link-btn:hover {
-            background-color: #3a8eef;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(74, 158, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(212, 168, 67, 0.5);
         }
 
         .external-link-btn.hilti-link {
-            background-color: var(--hilti-red);
+            background: linear-gradient(135deg, var(--hilti-red) 0%, #ff3333 100%);
+            color: white;
         }
 
         .external-link-btn.hilti-link:hover {
-            background-color: #bb0000;
-            box-shadow: 0 4px 8px rgba(221, 0, 0, 0.3);
+            box-shadow: 0 6px 16px rgba(221, 0, 0, 0.5);
         }
 
         .external-link-btn.sika-link {
-            background-color: var(--sika-yellow);
+            background: linear-gradient(135deg, var(--sika-yellow) 0%, #ffe033 100%);
             color: #000;
         }
 
         .external-link-btn.sika-link:hover {
-            background-color: #e6b800;
-            box-shadow: 0 4px 8px rgba(255, 204, 0, 0.3);
+            box-shadow: 0 6px 16px rgba(255, 204, 0, 0.5);
         }
 
         .content-section {
             display: none;
-            padding: 40px 20px;
+            padding: 50px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .content-section.active {
             display: block;
-            animation: fadeIn 0.4s ease-in-out;
+            animation: fadeIn 0.5s ease-in-out;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
+            gap: 30px;
+            margin-top: 30px;
         }
 
         .card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 25px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            border-left: 5px solid #555;
+            background: linear-gradient(135deg, var(--card-bg) 0%, #3a3a3a 100%);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+            border-left: 6px solid var(--gold);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.4);
         }
 
         .card.sika-accent { border-left-color: var(--sika-yellow); }
@@ -170,8 +262,8 @@
 
         .card h3 {
             margin-top: 0;
-            font-size: 1.4rem;
-            color: var(--text-light);
+            font-size: 1.5rem;
+            color: var(--gold-light);
         }
 
         .card ul {
@@ -180,87 +272,95 @@
         }
 
         .card li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .badge {
             display: inline-block;
-            padding: 4px 10px;
-            font-size: 0.75rem;
+            padding: 6px 12px;
+            font-size: 0.8rem;
             font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 12px;
+            border-radius: 6px;
+            margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .badge.sika { background-color: var(--sika-yellow); color: #000; }
-        .badge.hilti { background-color: var(--hilti-red); color: #fff; }
-        .badge.castrol { background-color: var(--castrol-green); color: #fff; }
+        .badge.sika { background: linear-gradient(135deg, var(--sika-yellow) 0%, #ffe033 100%); color: #000; }
+        .badge.hilti { background: linear-gradient(135deg, var(--hilti-red) 0%, #ff3333 100%); color: #fff; }
+        .badge.castrol { background: linear-gradient(135deg, var(--castrol-green) 0%, #00a050 100%); color: #fff; }
 
         .sub-section-title {
-            border-bottom: 2px solid #444;
-            padding-bottom: 10px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: var(--text-light);
+            border-bottom: 3px solid var(--gold);
+            padding-bottom: 12px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            color: var(--gold-light);
+            font-size: 1.8rem;
         }
 
         footer {
-            background-color: #111;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--dark-bg) 100%);
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-            color: var(--text-gray);
-            font-size: 0.9rem;
-            border-top: 1px solid #333;
+            padding: 40px 20px;
+            margin-top: 80px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            border-top: 4px solid var(--gold);
         }
 
         /* WhatsApp Floating Button */
         .whatsapp-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background-color: var(--whatsapp-green);
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--whatsapp-green) 0%, #128c7e 100%);
             color: white;
             border-radius: 50px;
-            padding: 14px 24px;
+            padding: 16px 28px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            font-size: 1rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
             z-index: 2000;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-            background-color: #20bd5a;
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 10px 28px rgba(37, 211, 102, 0.6);
         }
 
         .whatsapp-icon {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             fill: white;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .logo-container { flex-direction: column; gap: 20px; }
+            .logo-35years, .logo-blue-version { max-width: 180px; }
+            header h1 { font-size: 1.8rem; }
             .main-nav { flex-direction: column; align-items: stretch; }
             .nav-btn { text-align: center; }
             .external-links { flex-direction: column; align-items: stretch; }
             .external-link-btn { justify-content: center; }
-            .whatsapp-float { bottom: 15px; right: 15px; padding: 12px 18px; font-size: 0.85rem; }
+            .whatsapp-float { bottom: 20px; right: 20px; padding: 14px 22px; font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
+        <div class="logo-container">
+            <img src="logo-gold.png" alt="35 Años Grupo Markina-Xemein" class="logo-35years">
+            <img src="logo-blue.png" alt="Grupo Markina-Xemein" class="logo-blue-version">
+        </div>
         <h1>Grupo Markina-Xemein</h1>
         <p>Soluciones de Construcción Industrial y Catálogo de Equipos</p>
+        <div class="anniversary-badge">🎉 35 Años de Excelencia - 1990-2025 🎉</div>
     </header>
 
     <!-- BOTONES DE ENLACES EXTERNOS -->
@@ -294,20 +394,20 @@
 
     <!-- MÓDULO 1: INICIO -->
     <section id="inicio" class="content-section active">
-        <h2>Bienvenidos al Grupo Markina-Xemein</h2>
+        <h2 style="color: var(--gold-light); font-size: 2rem; margin-bottom: 30px;">Bienvenidos al Grupo Markina-Xemein</h2>
         <div class="card">
             <h3>Trayectoria y Propósito</h3>
-            <p>Con <strong>35 años de experiencia</strong> en el mercado, iniciando operaciones en el año <strong>1990</strong>, somos una corporación dedicada a la importación y distribución de productos para los sectores de ferretería, construcción, industrial y automotriz.</p>
+            <p>Con <strong style="color: var(--gold);">35 años de experiencia</strong> en el mercado, iniciando operaciones en el año <strong style="color: var(--gold);">1990</strong>, somos una corporación dedicada a la importación y distribución de productos para los sectores de ferretería, construcción, industrial y automotriz.</p>
             <p>Nuestra meta es proveer soluciones profesionales rápidas, seguras y bajo estrictos estándares de seguridad.</p>
             <br>
             <h3>Cartera de Clientes</h3>
-            <p>A través de nuestra filial <strong>Pentagonia</strong>, atendemos a más de <strong>7.000 clientes activos</strong> plenamente registrados a nivel nacional, garantizando continuidad operativa y suministro confiable.</p>
+            <p>A través de nuestra filial <strong style="color: var(--gold);">Pentagonia</strong>, atendemos a más de <strong style="color: var(--gold);">7.000 clientes activos</strong> plenamente registrados a nivel nacional, garantizando continuidad operativa y suministro confiable.</p>
         </div>
     </section>
 
     <!-- MÓDULO 2: SIKA -->
     <section id="sika" class="content-section">
-        <h2>Sika: 114 Años de Ingeniería Suiza</h2>
+        <h2 style="color: var(--gold-light); font-size: 2rem;">Sika: 114 Años de Ingeniería Suiza</h2>
         <p>Más de 50 fábricas con capacidad industrial instalada en Latinoamérica. Garantizamos suministro continuo y capacidad de respuesta ininterrumpida para paradas de planta programadas y mantenimiento continuo en el oriente venezolano.</p>
 
         <h3 class="sub-section-title">Catálogo de Productos y Soluciones Constructivas</h3>
@@ -369,7 +469,7 @@
 
     <!-- MÓDULO 3: HILTI -->
     <section id="hilti" class="content-section">
-        <h2>Hilti: Sistemas de Fijación y Herramientas Pesadas</h2>
+        <h2 style="color: var(--gold-light); font-size: 2rem;">Hilti: Sistemas de Fijación y Herramientas Pesadas</h2>
         <p>Empresa de origen suizo fundada en 1941, con presencia directa en Venezuela desde los años 70 y servicio técnico propio en Caracas.</p>
 
         <h3 class="sub-section-title">Herramientas de Perforación y Demolición</h3>
@@ -440,7 +540,7 @@
 
     <!-- MÓDULO 4: CASTROL -->
     <section id="castrol" class="content-section">
-        <h2>Castrol: 125 Años de Innovación en Lubricantes</h2>
+        <h2 style="color: var(--gold-light); font-size: 2rem;">Castrol: 125 Años de Innovación en Lubricantes</h2>
         <p>Fundada en 1899. Récord de más de 5 millones de kilómetros con el Volvo P1800 de Irv Gordon, récord de velocidad en tierra con el Thrust SSC (1,228 km/h) y único lubricante en Marte a bordo del Rover Perseverance de la NASA.</p>
 
         <h3 class="sub-section-title">Catálogo de Productos Automotrices y de Moto</h3>
@@ -484,7 +584,8 @@
     </section>
 
     <footer>
-        <p>© 2026 Grupo Markina-Xemein. Todos los derechos reservados. Especificaciones basadas en Catálogo Técnico Autorizado.</p>
+        <p style="color: var(--gold); font-weight: bold; margin-bottom: 10px;">© 2025 Grupo Markina-Xemein - 35 Años de Trayectoria</p>
+        <p>Todos los derechos reservados. Especificaciones basadas en Catálogo Técnico Autorizado.</p>
     </footer>
 
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
