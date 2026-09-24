@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Markina-Xemein | 35 Años de Soluciones Industriales, Sika, Hilti & Castrol</title>
+    
+    <!-- Meta tags SEO -->
+    <meta name="description" content="Suministro de soluciones de ingeniería, impermeabilización Sika, sistemas de anclaje y perforación Hilti y lubricación industrial Castrol en Venezuela. 35 años de excelencia.">
+    <meta name="keywords" content="Sika Venezuela, Hilti Venezuela, Castrol Venezuela, Markina Xemein, Pentagonia, Aditivos Concreto, Anclajes Epóxicos, Lubricantes Industriales">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind config calibrado exactamente con la paleta de los logos adjuntos -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gmx: {
+                            navy: '#1E3354',      /* Azul Marino Oficial extraído de la imagen */
+                            cyan: '#00A3E0',      /* Azul Celeste extraído del fondo/acentos */
+                            cyanLight: '#E5F6FD', /* Fondo muy suave celeste */
+                            gold: '#DCA134',      /* Dorado extraído del logo de 35 años */
+                            goldDark: '#B88222',  /* Dorado oscuro para bordes y texto */
+                            bgLight: '#F8FAFC',   /* Fondo limpio institucional */
+                            textDark: '#0F172A',
+                            textMuted: '#475569'
+                        },
+                        sika: {
+                            yellow: '#D97706',
+                            bg: '#FFFBEB'
+                        },
+                        hilti: {
+                            red: '#DC2626',
+                            bg: '#FEF2F2'
+                        },
+                        castrol: {
+                            green: '#059669',
+                            bg: '#ECFDF5'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #F8FAFC;
+            color: #0F172A;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Tarjeta institucional con acentos de los colores oficiales */
+        .gmx-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 15px -2px rgba(30, 51, 84, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gmx-card:hover {
+            border-color: #00A3E0;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px -5px rgba(0, 163, 224, 0.15);
+        }
+
+        /* Degradado usando el Azul Marino y Celeste de la marca */
+        .gmx-hero-gradient {
+            background: linear-gradient(135deg, #1E3354 0%, #15253F 60%, #0D1B30 100%);
+        }
+
+        /* Patrón geométrico inspirado en las líneas blancas y bloques del logo azul */
+        .grid-pattern-official {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 163, 224, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 163, 224, 0.08) 1px, transparent 1px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00A3E0;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1E3354;
+        }
+
+        /* Tab active highlight styling */
+        .tab-active-inicio {
+            border-bottom: 3px solid #00A3E0 !important;
+            color: #1E3354 !important;
+            background: #FFFFFF;
+            font-weight: 700;
+        }
+        .tab-active-sika {
+            border-bottom: 3px solid #D97706 !important;
+            color: #B45309 !important;
+            background: #FFFFFF;
+            font-weight: 700;
+        }
+        .tab-active-hilti {
+            border-bottom: 3px solid #DC2626 !important;
+            color: #DC2626 !important;
+            background: #FFFFFF;
+            font-weight: 700;
+        }
+        .tab-active-castrol {
+            border-bottom: 3px solid #059669 !important;
+            color: #059669 !important;
+            background: #FFFFFF;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-gmx-cyan selection:text-white">
+
+    <!-- BARRA SUPERIOR AZUL MARINO Y CELESTE: CALCULADORAS Y HERRAMIENTAS TÉCNICAS -->
+    <div class="bg-gmx-navy border-b border-gmx-cyan/30 py-2.5 px-4 text-xs z-50 text-white">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center space-x-2 text-slate-100">
+                <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-gmx-cyan text-white">
+                    <i class="fa-solid fa-calculator mr-1"></i> ACCESO DIRECTO A HERRAMIENTAS
+                </span>
+                <span class="hidden sm:inline text-gmx-cyan">|</span>
+                <span class="hidden sm:inline text-slate-200">Plataformas de Cálculo y Recubrimientos Técnicos:</span>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2">
+                <a href="https://dimax-gmx.github.io/hilticalc1/" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-white/10 hover:bg-gmx-cyan text-white border border-white/20 transition-all font-medium">
+                    <i class="fa-solid fa-bolt text-gmx-gold text-xs"></i> Hilti Calc
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-70"></i>
+                </a>
+
+                <a href="https://dimax-gmx.github.io/sikarecinfo/" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-white/10 hover:bg-gmx-cyan text-white border border-white/20 transition-all font-medium">
+                    <i class="fa-solid fa-layer-group text-gmx-gold text-xs"></i> Sika Recubrimientos
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-70"></i>
+                </a>
+
+                <a href="https://dimax-gmx.github.io/sikacalc1/" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-white/10 hover:bg-gmx-cyan text-white border border-white/20 transition-all font-medium">
+                    <i class="fa-solid fa-chart-pie text-gmx-gold text-xs"></i> Sika Rendimiento
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[9px] opacity-70"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN Y HEADER PRINCIPAL CON LOGOTIPO OFICIAL SUBIDO -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- LOGO OFICIAL INTEGRO DESDE EL ARCHIVO logo-gold.png -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('inicio')">
+                    <img src="logo-gold.png" alt="Grupo Markina-Xemein 35 Años Logo" class="h-14 w-auto object-contain hover:opacity-90 transition-opacity">
+                    <div class="hidden sm:block border-l border-slate-200 pl-3 py-1">
+                        <span class="block text-xs font-bold text-gmx-navy uppercase tracking-wider font-mono">Portal de Ingeniería</span>
+                        <span class="block text-[10px] text-gmx-cyan font-semibold">Sika • Hilti • Castrol</span>
+                    </div>
+                </div>
+
+                <!-- Menú Desktop -->
+                <nav class="hidden md:flex space-x-1 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
+                    <button onclick="switchTab('inicio')" id="nav-inicio" class="nav-btn tab-active-inicio px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider text-slate-600 hover:text-gmx-navy transition-all">
+                        <i class="fa-solid fa-building-user mr-1.5 text-gmx-cyan"></i>Inicio
+                    </button>
+                    <button onclick="switchTab('sika')" id="nav-sika" class="nav-btn px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider text-slate-600 hover:text-amber-700 transition-all">
+                        <i class="fa-solid fa-shield-halved mr-1.5 text-amber-600"></i>Sika Venezuela
+                    </button>
+                    <button onclick="switchTab('hilti')" id="nav-hilti" class="nav-btn px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider text-slate-600 hover:text-red-600 transition-all">
+                        <i class="fa-solid fa-hammer mr-1.5 text-red-600"></i>Hilti
+                    </button>
+                    <button onclick="switchTab('castrol')" id="nav-castrol" class="nav-btn px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider text-slate-600 hover:text-emerald-700 transition-all">
+                        <i class="fa-solid fa-oil-can mr-1.5 text-emerald-600"></i>Castrol
+                    </button>
+                </nav>
+
+                <!-- Botón CTA Rápido Cotización -->
+                <div class="hidden lg:flex items-center space-x-3">
+                    <a href="https://wa.me/+584265831648?text=Hola,%20deseo%20solicitar%20asesor%C3%ADa%20y%20cotizaci%C3%B3n%20técnica." 
+                       target="_blank" 
+                       class="inline-flex items-center space-x-2 bg-gmx-cyan hover:bg-gmx-navy text-white font-semibold text-xs px-4 py-2.5 rounded-lg shadow-md transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-base"></i>
+                        <span>Atención Inmediata</span>
+                    </a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="text-slate-700 hover:text-gmx-navy p-2 rounded-lg bg-slate-100 border border-slate-200">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2 shadow-lg">
+            <button onclick="switchTab('inicio'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 flex items-center gap-2">
+                <i class="fa-solid fa-building-user text-gmx-cyan"></i> Inicio / Empresa
+            </button>
+            <button onclick="switchTab('sika'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-amber-600"></i> Sika Venezuela
+            </button>
+            <button onclick="switchTab('hilti'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 flex items-center gap-2">
+                <i class="fa-solid fa-hammer text-red-600"></i> Hilti
+            </button>
+            <button onclick="switchTab('castrol'); toggleMobileMenu()" class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 flex items-center gap-2">
+                <i class="fa-solid fa-oil-can text-emerald-600"></i> Castrol Lubricantes
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+
+        <!-- ========================================== -->
+        <!-- MÓDULO 1: INICIO & HERO CORPORATIVO        -->
+        <!-- ========================================== -->
+        <section id="tab-inicio" class="content-tab block">
+            
+            <!-- Hero principal con el Logo Versión Azul Integrado -->
+            <div class="relative overflow-hidden py-16 lg:py-24 gmx-hero-gradient text-white grid-pattern-official border-b border-gmx-cyan/30">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="grid lg:grid-cols-12 gap-12 items-center">
+                        
+                        <!-- Columna de Texto Hero -->
+                        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gmx-cyan/20 border border-gmx-cyan/40 text-gmx-cyan text-xs font-bold tracking-wider uppercase shadow-sm">
+                                <span class="w-2.5 h-2.5 rounded-full bg-gmx-cyan animate-pulse"></span>
+                                <span>35 Años de Servicio Técnico Especializado | 1990 - 2025</span>
+                            </div>
+
+                            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none text-white">
+                                Soluciones de Ingeniería y <span class="text-gmx-cyan">Suministro Industrial</span>
+                            </h1>
+
+                            <p class="text-base sm:text-lg text-slate-300 max-w-2xl font-normal leading-relaxed">
+                                Distribución oficial y acompañamiento técnico para los sectores de la construcción, minero, industrial y petrolero. Representantes de marcas líderes internacionales.
+                            </p>
+
+                            <!-- Indicadores con la paleta oficial -->
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10">
+                                <div class="bg-white/10 backdrop-blur p-3.5 rounded-xl border border-white/15">
+                                    <div class="text-2xl font-black text-gmx-gold font-mono">+7,000</div>
+                                    <div class="text-xs text-slate-300 uppercase font-semibold">Clientes Activos</div>
+                                </div>
+                                <div class="bg-white/10 backdrop-blur p-3.5 rounded-xl border border-white/15">
+                                    <div class="text-2xl font-black text-gmx-cyan font-mono">35 Años</div>
+                                    <div class="text-xs text-slate-300 uppercase font-semibold">Trayectoria</div>
+                                </div>
+                                <div class="bg-white/10 backdrop-blur p-3.5 rounded-xl border border-white/15 col-span-2 sm:col-span-1">
+                                    <div class="text-2xl font-black text-emerald-400 font-mono">Pentagonia</div>
+                                    <div class="text-xs text-slate-300 uppercase font-semibold">Distribuidora</div>
+                                </div>
+                            </div>
+
+                            <!-- Botones de Acción -->
+                            <div class="flex flex-wrap gap-4 pt-2 justify-center lg:justify-start">
+                                <a href="https://wa.me/+584265831648?text=Hola,%20deseo%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto." 
+                                   target="_blank"
+                                   class="px-6 py-3.5 rounded-xl bg-gmx-cyan hover:bg-sky-400 text-white font-bold text-sm tracking-wider uppercase shadow-lg transition-all flex items-center gap-2">
+                                    <i class="fa-solid fa-file-invoice"></i>
+                                    Solicitar Cotización Técnica
+                                </a>
+                                <button onclick="switchTab('sika')" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/30 font-bold text-sm tracking-wider uppercase transition-all shadow-md flex items-center gap-2">
+                                    <i class="fa-solid fa-cubes text-gmx-gold"></i>
+                                    Ver Productos
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Columna con la Imagen Oficial Azul Subida por el usuario -->
+                        <div class="lg:col-span-5">
+                            <div class="bg-white p-4 rounded-2xl border border-gmx-cyan/30 shadow-2xl overflow-hidden group">
+                                <div class="relative bg-gmx-navy rounded-xl p-4 overflow-hidden flex items-center justify-center">
+                                    <!-- IMAGEN DEL LOGOTIPO AZUL EXACTA SUBIDA POR EL USUARIO -->
+                                    <img src="logo-blue.png" alt="Logotipo Oficial Grupo Markina-Xemein Azul" class="w-full h-auto object-contain rounded-lg transform group-hover:scale-102 transition-transform duration-500">
+                                </div>
+                                <div class="pt-4 text-center">
+                                    <p class="text-xs text-gmx-navy font-bold uppercase tracking-wider font-mono">
+                                        Identidad Gráfica Oficial 35° Aniversario
+                                    </p>
+                                    <p class="text-[11px] text-slate-500 mt-1">
+                                        Compromiso técnico y calidad ininterrumpida en Venezuela.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Quiénes Somos e Integración de Marca -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                
+                <!-- Presentación de Logos Oficiales (Dorado y Azul) -->
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-black text-gmx-navy uppercase tracking-tight">
+                        Respaldo e Identidad Institucional
+                    </h2>
+                    <div class="w-16 h-1 bg-gmx-cyan mx-auto my-3 rounded-full"></div>
+                    <p class="text-slate-600 text-sm">
+                        Con tres décadas y media de presencia ininterrumpida, consolidamos el liderazgo de nuestras líneas de impermeabilización, fijación y lubricación.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <div class="gmx-card p-8 rounded-2xl border-l-4 border-l-gmx-gold">
+                        <div class="flex items-center gap-4 mb-4">
+                            <img src="logo-gold.png" alt="Logo Dorado 35 Años" class="h-12 w-auto object-contain">
+                            <div>
+                                <h3 class="text-lg font-bold text-gmx-navy">Trayectoria y Propósito Corporativo</h3>
+                                <span class="text-xs text-gmx-goldDark font-semibold font-mono">Fundados en 1990</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed text-sm mb-4">
+                            Iniciamos operaciones en <strong class="text-gmx-navy">1990</strong>. A lo largo de más de tres décadas, el <strong class="text-gmx-navy font-bold">Grupo Markina-Xemein</strong> se ha consolidado como un referente en la importación, distribución y soporte técnico especializado de productos para ferretería, construcción e industria pesada.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            Nuestra meta central es asegurar soluciones profesionales rápidas, confiables y bajo los más exigentes estándares internacionales de seguridad operativa.
+                        </p>
+                    </div>
+
+                    <div class="gmx-card p-8 rounded-2xl border-l-4 border-l-gmx-cyan">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-lg bg-gmx-cyanLight text-gmx-cyan flex items-center justify-center text-2xl font-bold border border-gmx-cyan/30">
+                                <i class="fa-solid fa-network-wired"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gmx-navy">Red de Distribución Pentagonia</h3>
+                                <span class="text-xs text-gmx-cyan font-semibold font-mono">Cobertura Nacional</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 leading-relaxed text-sm mb-4">
+                            A través de nuestra empresa filial <strong class="text-gmx-navy">Pentagonia</strong>, suministramos insumos industriales de manera directa a más de <strong class="text-gmx-navy">7.000 clientes activos</strong> en todo el territorio nacional.
+                        </p>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            Garantizamos continuidad en la cadena de suministro, disponibilidad inmediata de inventario para paradas de planta programadas y asesoría técnica en sitio.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ========================================== -->
+        <!-- MÓDULO 2: SIKA VENEZUELA                   -->
+        <!-- ========================================== -->
+        <section id="tab-sika" class="content-tab hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                
+                <!-- Encabezado Sika -->
+                <div class="bg-amber-50 border border-amber-200 p-8 rounded-2xl border-l-8 border-l-amber-500 mb-12 shadow-sm">
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <div>
+                            <span class="px-3 py-1 rounded bg-amber-100 text-amber-800 font-mono text-xs font-bold uppercase">
+                                114 Años de Ingeniería Suiza
+                            </span>
+                            <h2 class="text-3xl font-black text-gmx-navy mt-2">Sika Venezuela: Soluciones de Construcción e Industria</h2>
+                            <p class="text-slate-600 text-sm max-w-3xl mt-2">
+                                Con más de 50 plantas en Latinoamérica, Sika ofrece suministro continuo y capacidad técnica para proyectos de infraestructura, edificación y mantenimiento continuo en el oriente venezolano.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="https://dimax-gmx.github.io/sikarecinfo/" target="_blank" class="px-4 py-2 rounded bg-amber-600 text-white font-bold text-xs hover:bg-amber-700 transition-colors shadow-sm">
+                                <i class="fa-solid fa-book-open mr-1"></i> Guía Recubrimientos
+                            </a>
+                            <a href="https://dimax-gmx.github.io/sikacalc1/" target="_blank" class="px-4 py-2 rounded bg-white text-amber-800 border border-amber-300 font-bold text-xs hover:bg-amber-100 transition-colors shadow-sm">
+                                <i class="fa-solid fa-calculator mr-1"></i> Calculadora Rendimientos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grilla de Catálogo General Sika -->
+                <h3 class="text-xl font-bold text-gmx-navy mb-6 flex items-center gap-2 border-b border-slate-200 pb-3">
+                    <i class="fa-solid fa-boxes-stacked text-amber-600"></i>
+                    Catálogo de Productos Constructivos
+                </h3>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-amber-500">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-800 uppercase">
+                            Impermeabilización
+                        </span>
+                        <h4 class="text-lg font-bold text-gmx-navy mt-3 mb-2">Sika®-1 & SikaCem®</h4>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">Sika®-1:</strong> Aditivo líquido para impermeabilizar morteros. Dosificación: 3% del peso del cemento (1.5 kg por saco de 50 kg). Consumo: ~0.5 kg/m².</li>
+                            <li><strong class="text-slate-800">SikaCem® Impermeable:</strong> Reductor de permeabilidad para concretos en cimentaciones y tanques. Dosis: 1 L por saco de 42.5 kg.</li>
+                            <li><strong class="text-slate-800">Sika®-101 Mortero:</strong> Revestimiento para contacto directo con agua potable. Consumo: ~2 kg/m² (2 capas).</li>
+                        </ul>
+                    </div>
+
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-amber-500">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-800 uppercase">
+                            Refuerzos y Acabados
+                        </span>
+                        <h4 class="text-lg font-bold text-gmx-navy mt-3 mb-2">SikaFiber® & Sikamastic®</h4>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">SikaFiber®:</strong> Microfibra sintética para prevenir fisuramiento por contracción plástica. Dosis: 0.6 kg/m³ de concreto.</li>
+                            <li><strong class="text-slate-800">Sikamastic® VE:</strong> Pasta 100% blanca para Drywall y techos interiores. Espesor máx. 3 mm. Rendimiento: 15-20 m²/paila.</li>
+                            <li><strong class="text-slate-800">Sika® ImperMur:</strong> Resina de impregnación para bloquear humedad por capilaridad y salitre.</li>
+                        </ul>
+                    </div>
+
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-amber-500">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-800 uppercase">
+                            Fachadas y Cubiertas
+                        </span>
+                        <h4 class="text-lg font-bold text-gmx-navy mt-3 mb-2">Protección Superficial</h4>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">Sika® Silicón:</strong> Repelente al agua para fachadas de ladrillo, concreto o piedra natural.</li>
+                            <li><strong class="text-slate-800">SikaTop® Elástico / 80:</strong> Recubrimiento flexible para reparación vertical y sellado.</li>
+                            <li><strong class="text-slate-800">Sika Multiseal:</strong> Cinta autoadhesiva asfáltica con aluminio para cubiertas metálicas.</li>
+                            <li><strong class="text-slate-800">Sika® Acril Techo® Hogar:</strong> Manto líquido acrílico con fibras. Garantía 3 años.</li>
+                        </ul>
+                    </div>
+
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-amber-500">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-800 uppercase">
+                            Adhesivos
+                        </span>
+                        <h4 class="text-lg font-bold text-gmx-navy mt-3 mb-2">Sikadur® & Sika® Rustex</h4>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">Sikadur®-32 Primer L:</strong> Puente de adherencia epóxico para concreto fresco con endurecido. Consumo: 400-500 g/m².</li>
+                            <li><strong class="text-slate-800">Sika® Sello Baños y Cocinas:</strong> Sellador de silicona antihongos de bajo VOC.</li>
+                            <li><strong class="text-slate-800">Sika® Rustex:</strong> Desoxidante y acondicionador de superficies de acero. Rendimiento: 10 m²/litro.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Sección Industrial RPLC -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded bg-gmx-navy text-gmx-cyan font-black flex items-center justify-center text-lg">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-gmx-navy">Especificación Industrial Avanzada (Refinería RPLC)</h3>
+                            <p class="text-xs text-slate-500 font-mono">Sistemas de Recubrimiento de Alto Rendimiento para Ambientes Agresivos</p>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 text-xs leading-relaxed">
+                        
+                        <div class="space-y-4">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <h4 class="font-bold text-amber-700 mb-2 text-sm">Estándares de Preparación de Superficie</h4>
+                                <p class="text-slate-600">
+                                    Nivel 1 (SSPC-SP2/SP3 manual/mecánico), Nivel 2 (SSPC-SP6 comercial), Nivel 3 (SSPC-SP10/SP5 metal casi blanco/blanco, rugosidad 2.0 - 4.0 mils).
+                                </p>
+                            </div>
+
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <h4 class="font-bold text-amber-700 mb-2 text-sm">Tanques de Crudo (hasta 80°C)</h4>
+                                <p class="text-slate-600">
+                                    SSPC-SP10 + Imprimación Epóxico Rojo Ref. 137008 (3-4 mils) + Sika Permacor Serie 82 (6-8 mils) + Esmalte Uretano AR (2-3 mils).
+                                </p>
+                            </div>
+
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <h4 class="font-bold text-amber-700 mb-2 text-sm">Temperatura Extrema (hasta 210°C)</h4>
+                                <p class="text-slate-600">
+                                    SSPC-SP5 + Serie 45 o Serie 400 Novolac (100% sólidos, soporta 210°C seco, 150°C inmersión, aprobación NSF/ANSI 61).
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <h4 class="font-bold text-amber-700 mb-2 text-sm">Tuberías Aéreas y Estructuras</h4>
+                                <p class="text-slate-600">
+                                    SSPC-SP10 + Autoimprimante Serie 100/82 o SikaCor 90 H5 (6-8 mils) + Esmalte Uretano AR o Serie 36 (2-3 mils).
+                                </p>
+                            </div>
+
+                            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                <h4 class="font-bold text-amber-700 mb-2 text-sm">Tanques de Agua y Fosas de Recogida</h4>
+                                <p class="text-slate-600">
+                                    SSPC-SP5 + Epóxico Serie 43 interior o Alquitrán Epóxico Ref. 786502 (6-8 mils) / Sika Permacor Serie 82 libre de alquitrán.
+                                </p>
+                            </div>
+
+                            <div class="bg-amber-50 p-4 rounded-xl border border-amber-300">
+                                <h4 class="font-bold text-amber-800 mb-1 text-sm"><i class="fa-solid fa-chart-line mr-1"></i> Física del Ahorro y ROI</h4>
+                                <p class="text-slate-700">
+                                    El sistema <strong>Sika Serie 400 Novolac</strong> es 100% sólidos. Esto garantiza cero pérdida de espesor por evaporación de solvente (frente a la pérdida de ~40% en epóxicos tradicionales), permitiendo alcanzar hasta 25 mils en una única aplicación sin fisuración.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- MÓDULO 3: HILTI                            -->
+        <!-- ========================================== -->
+        <section id="tab-hilti" class="content-tab hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                
+                <!-- Encabezado Hilti -->
+                <div class="bg-red-50 border border-red-200 p-8 rounded-2xl border-l-8 border-l-red-600 mb-12 shadow-sm">
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <div>
+                            <span class="px-3 py-1 rounded bg-red-100 text-red-700 font-mono text-xs font-bold uppercase">
+                                Calidad Suiza desde 1941
+                            </span>
+                            <h2 class="text-3xl font-black text-gmx-navy mt-2">Hilti: Sistemas de Fijación Pesada y Perforación</h2>
+                            <p class="text-slate-600 text-sm max-w-3xl mt-2">
+                                Presencia directa en Venezuela con soporte para la industria petrolera, minera y civil. Herramientas diseñadas para operar en las condiciones más exigentes.
+                            </p>
+                        </div>
+                        <div>
+                            <a href="https://dimax-gmx.github.io/hilticalc1/" target="_blank" class="px-5 py-2.5 rounded bg-red-600 text-white font-bold text-xs hover:bg-red-700 transition-colors shadow-md inline-flex items-center gap-2">
+                                <i class="fa-solid fa-calculator"></i>
+                                Calculadora Técnica Hilti
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grilla de Productos Hilti -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-red-600">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-red-100 text-red-700 uppercase">
+                            Rotomartillos SDS-Plus
+                        </span>
+                        <h3 class="text-lg font-bold text-gmx-navy mt-3 mb-2">Equipos Livianos y Medios</h3>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">TE 2:</strong> 2.7 kg, 1.8 J, 650W. Brocas TE-C / TE-CX.</li>
+                            <li><strong class="text-slate-800">TE 3-C:</strong> Triple modo con cincelado correctivo. 3.0 kg, 2.5 J, 650W.</li>
+                            <li><strong class="text-slate-800">TE 6-CL:</strong> Empuñadura D-Grip con astillado. 3.38 kg, 2.3 J, 890W.</li>
+                            <li><strong class="text-slate-800">TE 30-AVR:</strong> Sistema AVR de reducción activa de vibración. 4.2 kg, 3.6 J, 900W.</li>
+                        </ul>
+                    </div>
+
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-red-600">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-red-100 text-red-700 uppercase">
+                            Rotomartillos SDS-Max
+                        </span>
+                        <h3 class="text-lg font-bold text-gmx-navy mt-3 mb-2">Equipos Pesados Combinados</h3>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">TE 50-AVR:</strong> 6.1 kg, 6 J de impacto, 1050W. Broca TE-YX.</li>
+                            <li><strong class="text-slate-800">TE 60-AVR/ATC:</strong> Control Activo de Par (ATC anti-torsión). 7.8 kg, 7.8 J, 1200W.</li>
+                            <li><strong class="text-slate-800">TE 70-AVR:</strong> Concreto de alta resistencia y perfiles pesados. 8.3 kg, 11.5 J, 1800W.</li>
+                        </ul>
+                    </div>
+
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-red-600">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-red-100 text-red-700 uppercase">
+                            Martillos Demoledores
+                        </span>
+                        <h3 class="text-lg font-bold text-gmx-navy mt-3 mb-2">Cincelado de Alto Impacto</h3>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">TE 500 / TE 700-AVR:</strong> Cincelado liviano a pesado (8.5 J a 11.5 J).</li>
+                            <li><strong class="text-slate-800">TE 800 / TE 1000-AVR:</strong> Demoledor para losas y paredes (21 J a 26 J, 7800 cm³/min).</li>
+                            <li><strong class="text-slate-800">TE 2000 / TE 3000-AVR:</strong> 35 J a 68 J. Potencia neumática directa sin compresor.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Grilla 2 Hilti Anclajes y Especiales -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-red-600">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-red-100 text-red-700 uppercase">
+                            Corte y Inalámbricos
+                        </span>
+                        <h3 class="text-lg font-bold text-gmx-navy mt-3 mb-2">Plataforma 22V</h3>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">Amoladoras:</strong> AG 450-7 (4.5", 840W) y AG 700-D (7", 1800W, gatillo hombre muerto).</li>
+                            <li><strong class="text-slate-800">Cortadoras:</strong> DCH 300-X eléctrica (120 mm) y DSH 700-X a gas (125 mm prof.).</li>
+                            <li><strong class="text-slate-800">SC 5ML-22:</strong> Sierra de corte en frío para zonas clasificadas sin chispas.</li>
+                        </ul>
+                    </div>
+
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-red-600">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-red-100 text-red-700 uppercase">
+                            Fijación Directa
+                        </span>
+                        <h3 class="text-lg font-bold text-gmx-navy mt-3 mb-2">Anclajes y Química</h3>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">DX 2 / DX-76 MX:</strong> Fijación a pólvora para acero y concreto.</li>
+                            <li><strong class="text-slate-800">KB 1 (Kwik Bolt):</strong> Anclaje mecánico para concreto fisurado (ACI 355.2).</li>
+                            <li><strong class="text-slate-800">HIT-RE 500 V3:</strong> Resina epóxica inyectable en agujeros húmedos o sumergidos. Dosificado con HDM 500.</li>
+                        </ul>
+                    </div>
+
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-red-600">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-red-100 text-red-700 uppercase">
+                            Perforación Diamantina
+                        </span>
+                        <h3 class="text-lg font-bold text-gmx-navy mt-3 mb-2">Protección y Soportes</h3>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">DD 200 / DD 160:</strong> Perforadoras diamantinas para nucleado continuo hasta 500 mm.</li>
+                            <li><strong class="text-slate-800">CF-150 ECO GV:</strong> Espuma de sellado cortafuego para pases.</li>
+                            <li><strong class="text-slate-800">Soportes Modulares:</strong> Montaje sin soldadura en caliente para la industria.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- MÓDULO 4: CASTROL                          -->
+        <!-- ========================================== -->
+        <section id="tab-castrol" class="content-tab hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                
+                <!-- Encabezado Castrol -->
+                <div class="bg-emerald-50 border border-emerald-200 p-8 rounded-2xl border-l-8 border-l-emerald-600 mb-12 shadow-sm">
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <div>
+                            <span class="px-3 py-1 rounded bg-emerald-100 text-emerald-800 font-mono text-xs font-bold uppercase">
+                                125 Años de Innovación Continua
+                            </span>
+                            <h2 class="text-3xl font-black text-gmx-navy mt-2">Castrol: Líder Mundial en Lubricación Sintética</h2>
+                            <p class="text-slate-600 text-sm max-w-3xl mt-2">
+                                Pioneros en ingeniería de fluidos. Con récords históricos de resistencia de motor en tierra y tecnología empleada en exploración aeroespacial por la NASA.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grilla de Catálogo Castrol -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-emerald-600">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 uppercase">
+                            Motores Gasolina
+                        </span>
+                        <h3 class="text-lg font-bold text-gmx-navy mt-3 mb-2">Línea Automotriz</h3>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">Castrol EDGE:</strong> 100% sintético de máxima resistencia (0W-20, 5W-20, 5W-30).</li>
+                            <li><strong class="text-slate-800">Castrol MAGNATEC:</strong> Moléculas inteligentes para protección desde el arranque (10W-30, 10W-40, 20W-50).</li>
+                            <li><strong class="text-slate-800">Castrol GTX Ultraclean:</strong> Neutraliza lodos y sedimentos (5W-20, 10W-30, 10W-40).</li>
+                            <li><strong class="text-slate-800">Castrol GTX High Mileage:</strong> Para vehículos con más de 100,000 km (25W-60).</li>
+                        </ul>
+                    </div>
+
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-emerald-600">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 uppercase">
+                            Motos 2T / 4T
+                        </span>
+                        <h3 class="text-lg font-bold text-gmx-navy mt-3 mb-2">Línea de Motocicletas</h3>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">Castrol Power 1:</strong> Sintético de alta aceleración y respuesta (5W-40, 10W-50).</li>
+                            <li><strong class="text-slate-800">Castrol Actevo:</strong> Con moléculas Actibond™ que protegen en tráfico severo (10W-40, 20W-50).</li>
+                            <li><strong class="text-slate-800">Actevo Essential:</strong> Aceite mineral de protección térmica continua.</li>
+                        </ul>
+                    </div>
+
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-emerald-600">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 uppercase">
+                            Transmisiones
+                        </span>
+                        <h3 class="text-lg font-bold text-gmx-navy mt-3 mb-2">Castrol Transmax</h3>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">Transmax Import Multi-Vehicle:</strong> Sintético para marcas asiáticas y americanas.</li>
+                            <li><strong class="text-slate-800">Transmax CVT:</strong> Formulado con Smooth Drive Technology™ para cajas continuas.</li>
+                            <li><strong class="text-slate-800">Transmax Mercon-V / Dex-Merc:</strong> Protección extendida en transmisiones automáticas.</li>
+                        </ul>
+                    </div>
+
+                    <div class="gmx-card p-6 rounded-xl border-t-4 border-t-emerald-600">
+                        <span class="text-[10px] font-bold font-mono px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 uppercase">
+                            Tratamiento Interno
+                        </span>
+                        <h3 class="text-lg font-bold text-gmx-navy mt-3 mb-2">Mantenimiento de Motor</h3>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><strong class="text-slate-800">Castrol Engine Shampoo:</strong> Limpiador pre-cambio de aceite. Disuelve depósitos de barro y residuos sin dañar empaques ni sellos de goma.</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER CORPORATIVO (AZUL MARINO Y CELESTE CON LOGO) -->
+    <footer class="bg-gmx-navy text-white border-t-4 border-gmx-cyan py-12 px-4 sm:px-6 lg:px-8 mt-16">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 mb-8 text-xs">
+            
+            <div class="space-y-3 md:col-span-2">
+                <div class="flex items-center space-x-3">
+                    <img src="logo-gold.png" alt="Logo Grupo Markina-Xemein" class="h-10 w-auto object-contain bg-white/10 p-1 rounded">
+                    <span class="font-black text-white text-base font-mono uppercase tracking-wider">GRUPO MARKINA-XEMEIN</span>
+                </div>
+                <p class="text-slate-300 max-w-sm leading-relaxed">
+                    Corporación con 35 años de liderazgo en el suministro de materiales de construcción, aditivos Sika, sistemas de anclaje Hilti y lubricación industrial Castrol. Atención nacional a través de la filial Pentagonia.
+                </p>
+                <div class="text-gmx-cyan font-mono font-bold pt-1">
+                    1990 - 2025 | 35 Años de Calidad Ininterrumpida
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white uppercase tracking-wider mb-3 border-b border-gmx-cyan/40 pb-1">Navegación</h4>
+                <ul class="space-y-2 text-slate-300">
+                    <li><button onclick="switchTab('inicio')" class="hover:text-gmx-cyan transition-colors">Inicio y Trayectoria</button></li>
+                    <li><button onclick="switchTab('sika')" class="hover:text-amber-400 transition-colors">Sika Venezuela & RPLC</button></li>
+                    <li><button onclick="switchTab('hilti')" class="hover:text-red-400 transition-colors">Herramientas Hilti</button></li>
+                    <li><button onclick="switchTab('castrol')" class="hover:text-emerald-400 transition-colors">Lubricantes Castrol</button></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-white uppercase tracking-wider mb-3 border-b border-gmx-cyan/40 pb-1">Atención Directa</h4>
+                <p class="text-slate-300 mb-2">Atención a empresas e industrias:</p>
+                <a href="https://wa.me/+584265831648" target="_blank" class="text-emerald-400 font-mono font-bold hover:underline flex items-center gap-1.5 text-sm">
+                    <i class="fa-brands fa-whatsapp text-base"></i> +58 426-5831648
+                </a>
+                <p class="text-[11px] text-slate-400 mt-3">
+                    Horario: Lunes a Viernes de 8:00 AM a 5:00 PM.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-400">
+            <p>© 2025 Grupo Markina-Xemein. Todos los derechos reservados.</p>
+            <p class="mt-2 sm:mt-0">Especificaciones técnicas sincronizadas con catálogos oficiales.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP CON COLOR CELESTE/VERDE -->
+    <a href="https://wa.me/+584265831648?text=Hola,%20quisiera%20recibir%20asesor%C3%ADa%20y%20cotizaci%C3%B3n%20técnica." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-3 rounded-full shadow-xl transition-all transform hover:scale-105 border border-white/20">
+        <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-200"></span>
+        </span>
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="hidden sm:inline text-xs tracking-wider uppercase">Cotizar por WhatsApp</span>
+    </a>
+
+    <!-- LÓGICA JAVASCRIPT INTERACTIVA -->
+    <script>
+        function switchTab(tabId) {
+            const tabs = document.querySelectorAll('.content-tab');
+            tabs.forEach(tab => tab.classList.add('hidden'));
+
+            const navBtns = document.querySelectorAll('.nav-btn');
+            navBtns.forEach(btn => {
+                btn.classList.remove('tab-active-inicio', 'tab-active-sika', 'tab-active-hilti', 'tab-active-castrol');
+            });
+
+            const selectedTab = document.getElementById('tab-' + tabId);
+            if (selectedTab) {
+                selectedTab.classList.remove('hidden');
+            }
+
+            const activeNav = document.getElementById('nav-' + tabId);
+            if (activeNav) {
+                activeNav.classList.add('tab-active-' + tabId);
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
